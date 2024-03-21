@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thusday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">sunday</div>
+    </div>
+
+    <ul class="language">
+        <li>java Scaript</li>
+    </ul>
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children);
+    // console.log(parent.children[0]);
+
+    // for (let i = 0; i< parent.children.length; i++){
+    //     console.log(parent.children[i].innerHTML);
+    // } 
+
+    // parent.children[1].style.color='orange';
+
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+
+    console.log('Nodes: ', parent.childNodes);
+
+    // CREATE THE ELEMENT IN HTML WITH THR HELP OF SCRIPT TAG:------
+    const div = document.createElement("div");
+    console.log(div);
+    div.className="main";
+    div.id=Math.round(Math.random() * 10 + 1);
+    div.setAttribute("title", "Generate title");
+    div.style.backgroundColor="blue";
+    div.style.padding="12px";
+    //  div.innerText="Deepak Singh";
+    const addtext = document.createTextNode("Deepak singh");
+    div.appendChild(addtext);
+    document.body.appendChild(div);
+    
+//-------------: Lecture no - 34 :----------
+function addlanguage(languagName){
+    const li = document.createElement('li');
+    li.innerHTML=`${languagName}`;
+    document.querySelector('.language').appendChild(li)
+}
+addlanguage("Python");
+
+function addOptilanguage(language){
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(language));
+    document.querySelector(".language").appendChild(li);
+    li.style.color="red";
+}
+
+addOptilanguage("java")
+
+// Edit:-------------;
+
+const secondlang = document.querySelector("li:nth-child(2)");
+// secondlang.innerHTML= "c++";/
+const newLi = document.createElement("li");
+newLi.textContent = "c++";
+secondlang.replaceWith(newLi);
+
+// edit
+const Firstlanguage = document.querySelector("li:first-child");
+Firstlanguage.outerHTML='<li>Typescript</li>' 
+
+//remove:--
+const Remove = document.querySelector("li:last-child");
+Remove.remove();
+</script>
+</html>

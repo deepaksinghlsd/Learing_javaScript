@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API in javaScript</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis veritatis, aut fugit blanditiis molestiae voluptates sint molestias. Deleniti, consequuntur labore, veritatis quidem repellat nam nostrum aperiam doloribus blanditiis aliquam maiores</p>
+
+</body>
+<script>
+    const requestUrl = 'https://randomuser.me/api/';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            const data =JSON.parse(this.responseText);
+            console.log(typeof data)
+            console.log(data);
+        }
+    }
+   
+    xhr.send();
+</script>
+</html>

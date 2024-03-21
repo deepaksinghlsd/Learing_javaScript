@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time out function</title>
+</head>
+<body>
+    <h1>Chai aur javaScript</h1>
+    <button id="Start">Start</button>
+    <button id="stop"> Stop</button>
+    
+</body>
+<script>
+   
+    let intervalId;
+    document.querySelector("#Start").addEventListener('click',function(){
+         intervalId = setInterval(Date,2000);
+        const Date = function(){
+       console.log("Deepak",Date.now())};
+        
+    })
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearInterval(intervalId);
+    })
+   
+  
+  
+
+
+</script>
+</html>
